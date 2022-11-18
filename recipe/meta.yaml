@@ -1,6 +1,6 @@
 {% set name = "requirements-parser" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "5963ee895c2d05ae9f58d3fc641082fb38021618979d6a152b6b1398bd7d4ed4" %}
+{% set version = "0.4.0" %}
+{% set sha256 = "e5977e78d51ba23729a93222a7332dc37b93e32676005aa35ef893dd56773059" %}
 
 package:
   name: {{ name|lower }}
@@ -14,10 +14,10 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
@@ -32,7 +32,7 @@ about:
   home: https://github.com/davidfischer/requirements-parser
   license: BSD
   license_file: LICENSE.rst
-  summary: 'This is a small Python module for parsing Pip requirement files.'
+  summary: This is a small Python module for parsing Pip requirement files.
 
   description: |
     This is a small Python module for parsing Pip requirement files.
