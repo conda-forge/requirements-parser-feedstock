@@ -1,6 +1,6 @@
 {% set name = "requirements-parser" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "5963ee895c2d05ae9f58d3fc641082fb38021618979d6a152b6b1398bd7d4ed4" %}
+{% set version = "0.6.0" %}
+{% set sha256 = "f45dd1a54c1ed87d4b713015da0899669fcc19b4a31d65b892db5dc7bd64fd3b" %}
 
 package:
   name: {{ name|lower }}
@@ -8,16 +8,16 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
