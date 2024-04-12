@@ -33,6 +33,7 @@ test:
 
 about:
   home: https://github.com/madpah/requirements-parser/
+  doc_url: https://requirements-parser.readthedocs.io/
   summary: A Pip requirements file parser.
   license: Apache-2.0
   license_file: LICENSE
