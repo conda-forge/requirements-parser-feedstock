@@ -1,45 +1,45 @@
 {% set name = "requirements-parser" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "5963ee895c2d05ae9f58d3fc641082fb38021618979d6a152b6b1398bd7d4ed4" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/requirements_parser-{{ version }}.tar.gz
+  sha256: 588f587ab76732d59df4c64bd81f1b4a4f1aaaa9b3eb7ad4f5890685446f03e8
 
 build:
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
-    - python
+  host:
+    - python >=3.8,<4.0
+    - poetry-core >=1.0.0
     - pip
   run:
-    - python
-    - setuptools
+    - python >=3.8.0,<4.0.0
+    - types-setuptools >=69.1.0
 
 test:
   imports:
-    - requirements
+    - requirements_parser
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: https://github.com/davidfischer/requirements-parser
-  license: BSD
-  license_file: LICENSE.rst
-  summary: 'This is a small Python module for parsing Pip requirement files.'
-
+  home: https://github.com/madpah/requirements-parser/
+  summary: A Pip requirements file parser.
+  license: Apache-2.0
+  license_file: LICENSE
   description: |
     This is a small Python module for parsing Pip requirement files.
     The goal is to parse everything in the Pip requirement file format spec.
-  doc_url: https://requirements-parser.readthedocs.io/
-  dev_url: https://github.com/davidfischer/requirements-parser
 
 extra:
   recipe-maintainers:
-    - CurtLH
+    - wolfv
