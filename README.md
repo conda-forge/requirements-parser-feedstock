@@ -9,6 +9,8 @@ Package license: Apache-2.0
 
 Summary: A Pip requirements file parser.
 
+Documentation: https://requirements-parser.readthedocs.io/
+
 This is a small Python module for parsing Pip requirement files.
 The goal is to parse everything in the Pip requirement file format spec.
 
