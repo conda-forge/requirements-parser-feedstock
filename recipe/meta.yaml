@@ -1,5 +1,5 @@
 {% set name = "requirements-parser" %}
-{% set version = "0.9.0" %}
+{% set version = "0.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/requirements_parser-{{ version }}.tar.gz
-  sha256: 588f587ab76732d59df4c64bd81f1b4a4f1aaaa9b3eb7ad4f5890685446f03e8
+  sha256: cf208b8cb23d9b05b35ab0238db416a4b751441a41744c9e8b619362ee534d17
 
 build:
   noarch: python
