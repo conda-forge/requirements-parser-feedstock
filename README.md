@@ -14,7 +14,6 @@ Documentation: https://requirements-parser.readthedocs.io/
 This is a small Python module for parsing Pip requirement files.
 The goal is to parse everything in the Pip requirement file format spec.
 
-
 Current build status
 ====================
 
