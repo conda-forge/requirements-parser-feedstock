@@ -1,6 +1,6 @@
 context:
   name: requirements-parser
-  version: "0.13.0"
+  version: "0.13.1"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/requirements_parser-${{ version }}.tar.gz
-  sha256: 0843119ca2cb2331de4eb31b10d70462e39ace698fd660a915c247d2301a4418
+  sha256: 78811383b2089b6c5197a1431bc2c12ff950245edca39a23eea3460782038dd3
 
 build:
   noarch: python
